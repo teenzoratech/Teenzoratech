@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teenzora Store</title>
+<style>
+body { font-family: Arial,sans-serif; margin:0; padding:0; background:#f9f9f9; }
+header { background:#0d6efd; color:white; padding:10px; text-align:center; }
+nav { background:white; padding:10px; display:flex; justify-content:center; gap:20px; }
+nav a { text-decoration:none; font-size:18px; color:#0d6efd; font-weight:bold; }
+.store-name { font-size:36px; font-weight:bold; text-align:center; margin:20px 0; color:#0d6efd; }
+.products { display:flex; justify-content:center; gap:20px; flex-wrap:wrap; padding:10px; }
+.product-card { background:white; width:300px; padding:15px; box-shadow:0 2px 10px rgba(0,0,0,0.1); text-align:center; border-radius:10px; }
+.product-card img { width:100%; height:250px; object-fit:contain; cursor:pointer; border-radius:10px; }
+.product-card h3 { margin:10px 0; }
+.product-card p { font-size:18px; font-weight:bold; margin:5px 0; }
+.order-btn { background:#25D366; color:white; border:none; padding:12px; font-size:16px; width:100%; cursor:pointer; border-radius:5px; }
+
+.popup { display:none; position:fixed; left:0; top:0; width:100%; height:100%; background:rgba(0,0,0,0.8); justify-content:center; align-items:center; z-index:9999; }
+.popup-content { background:white; padding:20px; width:90%; max-width:600px; border-radius:10px; text-align:center; }
+.popup-content img { width:100%; max-height:350px; object-fit:contain; border-radius:10px; margin-bottom:15px; }
+.popup-content h3 { font-size:28px; color:#0d6efd; margin-bottom:10px; }
+.popup-content p { font-size:18px; line-height:1.6; margin-bottom:10px; }
+.close-btn { margin-top:15px; padding:10px 15px; background:#e74c3c; color:white; border:none; cursor:pointer; border-radius:5px; font-size:16px; }
+@media (max-width:768px){.products{flex-direction:column; align-items:center;} nav{flex-direction:column; gap:10px;}}
+</style>
+</head>
+<body>
+
+<header>
+    <h2>Welcome to Teenzora</h2>
+</header>
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#">Store</a>
+    <a href="#">About</a>
+</nav>
+
+<div class="store-name">TEENZORA</div>
+
+<div class="products">
+
+    <!-- Product 1 -->
+    <div class="product-card">
+        <img src="https://i.postimg.cc/L4NnSnJq/img-2-1766579121860.jpg" alt="Super Wifi Camera" onclick="openPopup('Super Wifi Camera','700 Tk','📌 Advanced Wifi Camera for Home & Business Security 🔹 HD Quality 🔹 Mobile App Support 🔹 Easy Wifi Setup 🔹 Night Vision 🔹 Motion Detection Alerts 🔹 1 Year Warranty 🔹 Free Shipping in Bangladesh','https://i.postimg.cc/L4NnSnJq/img-2-1766579121860.jpg')">
+        <h3>Super Wifi Camera</h3>
+        <p>Price: 700 Tk</p>
+        <button class="order-btn" onclick="window.open('https://wa.me/8801858677996','_blank')">Order on WhatsApp</button>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="product-card">
+        <img src="https://via.placeholder.com/300x250.png?text=Product+2" alt="Smart Home Sensor" onclick="openPopup('Smart Home Sensor','600 Tk','🔹 Smart Sensor for Home Automation 🔹 Easy Setup 🔹 Mobile App Control 🔹 Alerts & Notifications 🔹 6 Month Warranty','https://via.placeholder.com/300x250.png?text=Product+2')">
+        <h3>Smart Home Sensor</h3>
+        <p>Price: 600 Tk</p>
+        <button class="order-btn" onclick="window.open('https://wa.me/8801858677996','_blank')">Order on WhatsApp</button>
+    </div>
+
+    <!-- Product 3 -->
+    <div class="product-card">
+        <img src="https://via.placeholder.com/300x250.png?text=Product+3" alt="Kids Educational Kit" onclick="openPopup('Kids Educational Kit','500 Tk','🔹 Fun Educational Kit for Kids 🔹 Learning Games 🔹 Safe Materials 🔹 Ages 3+ 🔹 Free Gift Included','https://via.placeholder.com/300x250.png?text=Product+3')">
+        <h3>Kids Educational Kit</h3>
+        <p>Price: 500 Tk</p>
+        <button class="order-btn" onclick="window.open('https://wa.me/8801858677996','_blank')">Order on WhatsApp</button>
+    </div>
+
+</div>
+
+<!-- Popup -->
+<div class="popup" id="productPopup">
+    <div class="popup-content">
+        <img id="popupImg" src="" alt="">
+        <h3 id="popupTitle"></h3>
+        <p id="popupPrice"></p>
+        <p id="popupDesc"></p>
+        <button class="order-btn" id="popupOrderBtn">Order on WhatsApp</button>
+        <button class="close-btn" onclick="closePopup()">Close</button>
+    </div>
+</div>
+
+<script>
+function openPopup(title, price, desc, img){
+    document.getElementById('popupTitle').innerText = title;
+    document.getElementById('popupPrice').innerText = price;
+    document.getElementById('popupDesc').innerText = desc;
+    document.getElementById('popupImg').src = img;
+    document.getElementById('productPopup').style.display = 'flex';
+    document.getElementById('popupOrderBtn').onclick = function(){
+        window.open('https://wa.me/8801858677996','_blank');
+    }
+}
+function closePopup(){
+    document.getElementById('productPopup').style.display = 'none';
+}
+</script>
+
+</body>
+</html>
