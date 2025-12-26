@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #2e3567;
+  color: white;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 60px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.logo-icon {
+  font-size: 26px;
+}
+
+nav a {
+  margin-left: 30px;
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* HERO SECTION */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px;
+}
+
+.hero-left {
+  max-width: 520px;
+}
+
+.hero-left h1 {
+  font-size: 56px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.hero-left p {
+  color: #d6d6d6;
+  margin-bottom: 25px;
+  font-size: 16px;
+}
+
+.chat-btn {
+  background: white;
+  color: #2e3567;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+
+.chat-btn:hover {
+  background: #e6e6e6;
+}
+
+.contact-info p {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #dddddd;
+}
+
+/* RIGHT SIDE */
+.hero-right {
+  position: relative;
+}
+
+.logo-box {
+  background: #f6efd9;
+  width: 420px;
+  height: 420px;
+  border-radius: 60% 40% 55% 45%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-box img {
+  width: 260px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-left h1 {
+    font-size: 42px;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .logo-box {
+    margin-top: 40px;
+    width: 300px;
+    height: 300px;
+  }
+
+  .logo-box img {
+    width: 200px;
+  }
+}
