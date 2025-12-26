@@ -117,7 +117,9 @@ nav a:hover {
   }
 
   nav {
-    display: none;
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
   }
 
   .logo-box {
